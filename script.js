@@ -6,10 +6,10 @@ document.getElementById("toggleButton").addEventListener("click", function() {
   if (!sidebar.classList.contains("open")) { // Si le sidebar est fermé
     sidebar.classList.add("open");
     content.classList.add("shifted");
-    toggleButton.textContent = "Fermer le sidebar"; // Met à jour le texte du bouton
+    toggleButton.innerText = "Fermer le sidebar"; // Met à jour le texte du bouton
   } else { // Si le sidebar est ouvert
     sidebar.classList.remove("open");
     content.classList.remove("shifted");
-    toggleButton.textContent = "Ouvrir le sidebar"; // Met à jour le texte du bouton
+    toggleButton.innerText = "Ouvrir le sidebar"; // Met à jour le texte du bouton
   }
 });
