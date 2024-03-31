@@ -8,6 +8,10 @@ body {
   min-height: 100vh; /* Assure que le contenu s'étend sur toute la hauteur de la fenêtre */
 }
 
+.container {
+  display: flex;
+}
+
 .sidebar {
   background-color: #262a2f;
   color: white;
