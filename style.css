@@ -29,22 +29,14 @@ body {
   transform: translateX(0);
 }
 
-#sidebarTitle {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-}
-
 .content {
   padding-left: 0;
   transition: padding-left 0.3s ease;
-  padding-top: 60px; /* Ajustez cet espace en fonction de la hauteur du titre */
 }
 
 .sidebar.open + .content {
   padding-left: 200px;
 }
-
 
 header {
   background-color: #262a2f;
@@ -57,11 +49,12 @@ h1 {
   font-size: 36px;
   margin-bottom: 10px;
 }
-
 .sidebar h2 {
   padding-top: 40px; /* Ajout de padding en haut du titre pour le décaler vers le bas */
   margin-bottom: 20px; /* Espacement entre le titre et les liens */
 }
+
+
 
 .subheader {
   font-size: 18px;
@@ -98,7 +91,7 @@ footer {
 /* Styles pour le bouton d'ouverture */
 #toggleButton {
   position: fixed;
-  top: -20px;
+  top: 20px;
   left: 20px;
   z-index: 1001;
   padding: 10px 15px;
@@ -106,10 +99,9 @@ footer {
   color: white;
   border: none;
   cursor: pointer;
-  margin-top: 60px; /* Réduire la marge supérieure du bouton pour le décaler vers le bas */
+  margin-top: 100px;
 }
 
 #toggleButton:hover {
   background-color: #494eea;
 }
-
