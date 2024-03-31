@@ -99,8 +99,8 @@ footer {
   color: white;
   border: none;
   cursor: pointer;
-  margin-top: 100px;
-  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 100px;
 }
 
 #toggleButton:hover {
