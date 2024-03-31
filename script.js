@@ -7,3 +7,4 @@ document.getElementById("closeButton").addEventListener("click", function() {
   document.getElementById("sidebar").classList.remove("open");
   document.getElementById("content").classList.remove("shifted");
 });
+
