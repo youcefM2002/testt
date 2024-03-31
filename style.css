@@ -1,14 +1,5 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
 .container {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Assure que le contenu s'étend sur toute la hauteur de la fenêtre */
 }
 
 .sidebar {
@@ -79,8 +70,11 @@ footer {
   color: white;
   text-align: center;
   padding: 20px 0;
-  margin-top: auto; /* Place le footer en bas de la page */
 }
 
-  margin-top: auto; /* Place le footer en bas de la page */
+#toggleButton {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001; /* Assurez-vous que le bouton est au-dessus du sidebar */
 }
