@@ -50,9 +50,10 @@ h1 {
   margin-bottom: 10px;
 }
 .sidebar h2 {
-  margin-top: 0; /* Ajout de marges pour dégager le titre du haut du sidebar */
+  padding-top: 40px; /* Ajout de padding en haut du titre pour le décaler vers le bas */
   margin-bottom: 20px; /* Espacement entre le titre et les liens */
 }
+
 
 
 .subheader {
