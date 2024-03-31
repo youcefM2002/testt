@@ -8,15 +8,7 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Assure que le contenu s'étend sur toute la hauteur de la fenêtre */
-}
-
-/* Positionne le bouton d'ouverture en haut à gauche */
-#toggleButton {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1000;
+  min-height: 100vh;
 }
 
 .sidebar {
@@ -87,4 +79,22 @@ footer {
   color: white;
   text-align: center;
   padding: 20px 0;
-  margin-top: auto; /* Place le footer en bas de la page */
+  margin-top: auto;
+}
+
+/* Styles pour le bouton d'ouverture */
+#toggleButton {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  padding: 10px 15px;
+  background-color: #262a2f;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#toggleButton:hover {
+  background-color: #494eea;
+}
