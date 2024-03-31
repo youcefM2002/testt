@@ -1,43 +1,31 @@
-/* Les styles existants pour la barre latérale */
 .sidebar {
   background-color: #262a2f;
   color: white;
   padding: 20px;
   width: 200px;
   height: 100vh;
-  transition: transform 0.3s ease; /* Ajout de la transition */
-  transform: translateX(-100%); /* Masquer le sidebar par défaut */
-  position: fixed; /* Rester fixe même si la page défile */
-  top: 0; /* Position au-dessus de la page */
-  left: 0; /* Position à gauche de la page */
-  z-index: 1000; /* Assurer que le sidebar reste au-dessus du contenu principal */
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-/* Classe pour ouvrir le sidebar */
 .sidebar.open {
-  transform: translateX(0); /* Afficher le sidebar lorsqu'il est ouvert */
+  transform: translateX(0);
 }
 
-/* Les styles existants pour le contenu principal */
 .container {
   max-width: 1200px;
   margin: auto;
   padding: 20px;
-  transition: transform 0.3s ease; /* Ajout de la transition */
+  transition: transform 0.3s ease;
 }
 
-/* Classe pour décaler le contenu principal lorsque le sidebar est ouvert */
-.container.shifted {
-  transform: translateX(200px); /* Décaler le contenu principal lorsque le sidebar est ouvert */
-}
-
-/* Les styles existants pour le bouton de basculement */
 #toggleButton {
-  position: fixed; /* Rester fixe même si la page défile */
-  top: 20px; /* Position au-dessus de la page */
-  left: 20px; /* Position à gauche de la page */
-  z-index: 1001; /* Assurer que le bouton reste au-dessus du contenu et du sidebar */
-}
-
-  z-index: 1001; /* Assurer que le bouton reste au-dessus du contenu et du sidebar */
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
 }
