@@ -93,13 +93,17 @@ footer {
   position: fixed;
   top: 20px;
   left: 20px;
-  z-index: 1001;
+  z-index: 1001; /* Augmentez le z-index */
   padding: 10px 15px;
   background-color: #262a2f;
   color: white;
   border: none;
   cursor: pointer;
   margin-top: 100px;
+}
+
+.sidebar.open #toggleButton {
+  z-index: 1002; /* Z-index plus élevé lorsque le sidebar est ouvert */
 }
 
 #toggleButton:hover {
