@@ -49,6 +49,11 @@ h1 {
   font-size: 36px;
   margin-bottom: 10px;
 }
+.sidebar h2 {
+  margin-top: 0; /* Ajout de marges pour dégager le titre du haut du sidebar */
+  margin-bottom: 20px; /* Espacement entre le titre et les liens */
+}
+
 
 .subheader {
   font-size: 18px;
