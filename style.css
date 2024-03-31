@@ -24,8 +24,12 @@ body {
 }
 
 .content {
-  padding-left: 200px; /* Ajuster la largeur du contenu en fonction de la largeur du sidebar */
+  padding-left: 0; /* Ajuster la largeur du contenu en fonction de la largeur du sidebar */
   transition: padding-left 0.3s ease; /* Ajout de la transition pour le contenu principal */
+}
+
+.content.shifted {
+  padding-left: 200px; /* Décalage du contenu vers la droite lorsque le sidebar est ouvert */
 }
 
 header {
@@ -45,28 +49,4 @@ h1 {
 }
 
 .features {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 40px 0;
-}
-
-.feature {
-  text-align: center;
-  width: 300px;
-  margin: 20px;
-}
-
-.feature img {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 20px;
-}
-
-footer {
-  background-color: #262a2f;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-}
+  display
