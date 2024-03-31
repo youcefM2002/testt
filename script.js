@@ -1,9 +1,14 @@
 document.getElementById("toggleButton").addEventListener("click", function() {
-  document.getElementById("sidebar").classList.toggle("open");
-  document.getElementById("content").classList.toggle("shifted");
-});
+  var sidebar = document.getElementById("sidebar");
+  var content = document.getElementById("content");
 
-document.getElementById("closeButton").addEventListener("click", function() {
-  document.getElementById("sidebar").classList.remove("open");
-  document.getElementById("content").classList.remove("shifted");
+  if (sidebar.classList.contains("open")) {
+    sidebar.classList.remove("open");
+    content.classList.remove("shifted");
+    this.textContent = "Ouvrir le sidebar";
+  } else {
+    sidebar.classList.add("open");
+    content.classList.add("shifted");
+    this.textContent = "Fermer le sidebar";
+  }
 });
