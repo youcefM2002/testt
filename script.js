@@ -7,3 +7,5 @@ toggleButton.addEventListener("click", function() {
   main.classList.toggle("shifted");
 });
 
+  z-index: 1001; /* Assurer que le bouton reste au-dessus du contenu et du sidebar */
+}
