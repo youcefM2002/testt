@@ -38,3 +38,6 @@
   left: 20px; /* Position à gauche de la page */
   z-index: 1001; /* Assurer que le bouton reste au-dessus du contenu et du sidebar */
 }
+
+  z-index: 1001; /* Assurer que le bouton reste au-dessus du contenu et du sidebar */
+}
