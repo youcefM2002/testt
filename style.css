@@ -91,7 +91,7 @@ footer {
 /* Styles pour le bouton d'ouverture */
 #toggleButton {
   position: fixed;
-  top: 100px;
+  top: 20px;
   left: 20px;
   z-index: 1001;
   padding: 10px 15px;
@@ -99,8 +99,7 @@ footer {
   color: white;
   border: none;
   cursor: pointer;
-  margin-top: 0px;
-  margin-bottom: 100px;
+  margin-top: 100px;
 }
 
 #toggleButton:hover {
