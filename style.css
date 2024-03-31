@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  display: flex;
+  overflow-x: hidden; /* Empêcher le défilement horizontal lorsque le sidebar est ouvert */
 }
 
 .sidebar {
@@ -24,10 +24,8 @@ body {
 }
 
 .content {
-  flex: 1;
-  padding-left: 220px; /* Pour laisser de l'espace pour le sidebar ouvert */
+  padding-left: 200px; /* Ajuster la largeur du contenu en fonction de la largeur du sidebar */
   transition: padding-left 0.3s ease; /* Ajout de la transition pour le contenu principal */
-  overflow-x: hidden; /* Empêcher le défilement horizontal lorsque le sidebar est ouvert */
 }
 
 header {
