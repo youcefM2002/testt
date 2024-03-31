@@ -90,7 +90,7 @@ footer {
 
 /* Styles pour le bouton d'ouverture */
 #toggleButton {
-  top: 100px;
+  top: 100;
   left: 20px;
   z-index: 1001;
   padding: 10px 15px;
