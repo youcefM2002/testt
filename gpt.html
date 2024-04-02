@@ -14,11 +14,15 @@
             height: calc(100% - 30%); /* Hauteur de l'écran moins 30% du haut */
             margin-top: 30%; /* Enlève 30% de la partie supérieure du site */
             overflow: hidden; /* Masque tout contenu dépassant de la zone délimitée */
+            position: relative; /* Ajout d'une position relative pour utiliser margin-top */
         }
         iframe {
             width: 100%;
             height: 100%;
             border: none;
+            position: absolute; /* Position absolue pour remplir complètement l'iframe */
+            top: 0; /* Aligner l'iframe en haut */
+            left: 0; /* Aligner l'iframe à gauche */
         }
         .site-name {
             font-size: 24px; /* Taille de la police */
@@ -27,6 +31,7 @@
             position: absolute; /* Position absolue pour le placer dans le coin supérieur gauche */
             top: 10px; /* Distance du haut */
             left: 10px; /* Distance de la gauche */
+            z-index: 999; /* Assurer que le nom du site est au-dessus de l'iframe */
         }
         
     </style>
