@@ -1,54 +1,53 @@
-document.getElementById('sendButton').addEventListener('click', function() {
-    sendMessage();
-});
+const apiKey = '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';
+const apiUrl = 'https://api.dialogflow.com/v1/query?v=20150910';
 
-document.getElementById('input').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter' && !event.shiftKey) {
-        event.preventDefault();
-        sendMessage();
-    }
+document.getElementById('sendButton').addEventListener('click', sendMessage);
+document.getElementById('input').addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    sendMessage();
+  }
 });
 
 async function sendMessage() {
-    const input = document.getElementById('input').value.trim();
-    if (input !== '') {
-        // Ajouter le message de l'utilisateur à la boîte de chat
-        addUserMessage(input);
+  const input = document.getElementById('input').value.trim();
+  if (input !== '') {
+    // Ajouter le message de l'utilisateur à la boîte de chat
+    addUserMessage(input);
 
-        // Appeler l'API de traitement du langage naturel
-        const response = await fetch('https://www.perplexity.ai/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ query: input })
-        });
+    // Appeler l'API Dialogflow
+    const response = await axios.post(apiUrl, {
+      query: input,
+      lang: 'en',
+      sessionId: '1234567890'
+    }, {
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json'
+      }
+    });
 
-        const data = await response.json();
+    // Ajouter la réponse du chatbot à la boîte de chat
+    addBotMessage(response.data.result.fulfillment.speech);
 
-        // Ajouter la réponse du chatbot à la boîte de chat
-        addChatbotMessage(data.response);
-
-        // Réinitialiser l'entrée
-        document.getElementById('input').value = '';
-
-        // Faire défiler vers le bas pour afficher le nouveau message
-        chatbox.scrollTop = chatbox.scrollHeight;
-    }
+    // Réinitialiser l'entrée
+    document.getElementById('input').value = '';
+  }
 }
 
 function addUserMessage(message) {
-    const chatbox = document.getElementById('chatbox');
-    const userMessage = document.createElement('div');
-    userMessage.classList.add('message', 'user-message');
-    userMessage.textContent = 'Vous : ' + message;
-    chatbox.appendChild(userMessage);
+  const chatbox = document.getElementById('chatbox');
+  const messageElement = document.createElement('div');
+  messageElement.className = 'message user-message';
+  messageElement.textContent = message;
+  chatbox.appendChild(messageElement);
+  chatbox.scrollTop = chatbox.scrollHeight;
 }
 
-function addChatbotMessage(message) {
-    const chatbox = document.getElementById('chatbox');
-    const chatbotMessage = document.createElement('div');
-    chatbotMessage.classList.add('message', 'chatbot-message');
-    chatbotMessage.textContent = 'Chatbot : ' + message;
-    chatbox.appendChild(chatbotMessage);
+function addBotMessage(message) {
+  const chatbox = document.getElementById('chatbox');
+  const messageElement = document.createElement('div');
+  messageElement.className = 'message bot-message';
+  messageElement.textContent = message;
+  chatbox.appendChild(messageElement);
+  chatbox.scrollTop = chatbox.scrollHeight;
 }
