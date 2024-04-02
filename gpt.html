@@ -1,1 +1,28 @@
+// Fonction pour envoyer une requête au serveur et obtenir la réponse du chatbot
+function sendMessageToBot(message) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://chat.openai.com/", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            displayBotResponse(response.message);
+        }
+    };
+
+    var data = JSON.stringify({ message: message });
+    xhr.send(data);
+}
+
+// Fonction pour afficher la réponse du chatbot sur la page
+function displayBotResponse(response) {
+    var chatContainer = document.getElementById("chat-container");
+    var botMessageElement = document.createElement("div");
+    botMessageElement.textContent = "Bot: " + response;
+    chatContainer.appendChild(botMessageElement);
+}
+
+// Exemple d'utilisation : Appel de la fonction sendMessageToBot avec le message de l'utilisateur
+sendMessageToBot("Bonjour");
 
