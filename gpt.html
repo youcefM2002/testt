@@ -17,12 +17,16 @@
             left: 0;
             width: 100%;
             height: 100%;
+            overflow: hidden;
         }
         iframe {
             width: 100%;
             height: 100%;
             border: none;
-            clip-path: polygon(20% 0, 70% 0, 100% 50%, 70% 100%, 20% 100%, 0 50%); /* Supprimer 30% de la droite et 20% de la gauche */
+            transform: skewX(-20deg); /* Incliner l'iframe de -20 degrés */
+            transform-origin: left top; /* Définir l'origine de la transformation en haut à gauche */
+            margin-left: 20%; /* Déplacer l'iframe de 20% vers la droite pour compenser la partie cachée à gauche */
+            margin-right: -50%; /* Déplacer l'iframe de 50% vers la gauche pour compenser la partie cachée à droite */
         }
         .site-name {
             font-size: 24px; /* Taille de la police */
