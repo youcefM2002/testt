@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot</title>
-    <link rel="stylesheet" href="main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot</title>
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Chatbot</h1>
-        <div id="chatbox"></div>
-        <textarea id="input" placeholder="Posez une question..."></textarea>
-        <button id="sendButton">Envoyer</button>
+  <div class="container">
+    <h1>Mon chatbot</h1>
+    <div id="chatbox">
+      <div class="message user-message">Vous : Bonjour</div>
+      <div class="message bot-message">Chatbot : Bonjour ! Comment puis-je vous aider ?</div>
     </div>
-    <script src="pro.js"></script>
+    <input type="text" id="input" placeholder="Tapez votre message ici...">
+    <button id="sendButton">Envoyer</button>
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="pro.js"></script>
 </body>
 </html>
