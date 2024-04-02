@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        #chatbox {
+            height: 400px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        #input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        #sendButton {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #sendButton:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            margin-bottom: 10px;
+        }
+        .user-message {
+            text-align: left;
+        }
+        .chatbot-message {
+            text-align: right;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chatbot</h1>
+        <div id="chatbox"></div>
+        <textarea id="input" placeholder="Posez une question..."></textarea>
+        <button id="sendButton">Envoyer</button>
+    </div>
+
+    <script>
+        document.getElementById('sendButton').addEventListener('click', function() {
+            sendMessage();
+        });
+
+        document.getElementById('input').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        });
+
+        function sendMessage() {
+            var input = document.getElementById('input').value.trim();
+            if (input !== '') {
+                var chatbox = document.getElementById('chatbox');
+                
+                // Créer un élément de message
+                var message = document.createElement('div');
+                message.classList.add('message');
+                
+                // Message de l'utilisateur
+                var userMessage = document.createElement('div');
+                userMessage.classList.add('user-message');
+                userMessage.textContent = 'Vous : ' + input;
+                message.appendChild(userMessage);
+
+                // Réponse du chatbot (temporaire)
+                var chatbotMessage = document.createElement('div');
+                chatbotMessage.classList.add('chatbot-message');
+                chatbotMessage.textContent = 'Chatbot : Je suis un chatbot, je ne peux pas répondre à cela pour le moment.';
+                message.appendChild(chatbotMessage);
+
+                // Ajouter le message à la boîte de chat
+                chatbox.appendChild(message);
+
+                // Réinitialiser l'entrée
+                document.getElementById('input').value = '';
+
+                // Faire défiler vers le bas pour afficher le nouveau message
+                chatbox.scrollTop = chatbox.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>
