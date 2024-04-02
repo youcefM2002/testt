@@ -17,14 +17,15 @@
             left: 0;
             width: 100%;
             height: 100%;
-            transform: translateY(30%); /* Déplacer l'iframe vers le bas de 30% de la hauteur de la fenêtre */
+            transform: translateY(50%); /* Déplacer l'iframe vers le bas de 50% de la hauteur de la fenêtre */
             overflow: hidden; /* Masquer le contenu débordant */
         }
         iframe {
             width: 100%;
-            height: 70%; /* La hauteur restante après avoir déplacé l'iframe */
+            height: 120%; /* Augmenter la hauteur de l'iframe pour compenser le déplacement */
             border: none;
-            transform: translateY(-30%); /* Déplacer le contenu de l'iframe vers le haut pour compenser le déplacement de l'iframe */
+            transform: translateY(-50%); /* Déplacer le contenu de l'iframe vers le haut pour compenser le déplacement de l'iframe */
+            margin-bottom: -30%; /* Réafficher 30% de la partie inférieure en utilisant une marge négative */
         }
         .site-name {
             font-size: 24px; /* Taille de la police */
