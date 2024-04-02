@@ -1,4 +1,4 @@
-const apiKey = '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';
+const apiKey = 'app key';
 const apiUrl = 'https://api.dialogflow.com/v1/query?v=20150910';
 
 document.getElementById('sendButton').addEventListener('click', sendMessage);
