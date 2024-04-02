@@ -11,16 +11,18 @@
             height: 100%;
         }
         .iframe-container {
-            position: relative; /* Position relative pour permettre le positionnement de l'iframe */
             height: calc(100% - 30%); /* Hauteur de l'écran moins 30% du haut */
+            margin-top: 30%; /* Enlève 30% de la partie supérieure du site */
             overflow: hidden; /* Masque tout contenu dépassant de la zone délimitée */
+            position: relative; /* Ajout d'une position relative pour utiliser margin-top */
         }
         iframe {
-            position: absolute; /* Position absolue pour remplir complètement l'iframe */
             width: 100%;
             height: 100%;
             border: none;
-            top: 30%; /* Positionne l'iframe en bas de la partie supérieure du site */
+            position: absolute; /* Position absolue pour remplir complètement l'iframe */
+            top: 0; /* Aligner l'iframe en haut */
+            left: 0; /* Aligner l'iframe à gauche */
         }
         .site-name {
             font-size: 24px; /* Taille de la police */
@@ -31,7 +33,13 @@
             left: 10px; /* Distance de la gauche */
             z-index: 999; /* Assurer que le nom du site est au-dessus de l'iframe */
         }
+        
     </style>
 </head>
 <body>
-    <div class
+    <div class="site-name">ToutEn1</div>
+    <div class="iframe-container">
+        <iframe src="https://ile-reunion.org/gpt3/" scrolling="no"></iframe>
+    </div>
+</body>
+</html>
