@@ -13,6 +13,7 @@
         .iframe-container {
             height: calc(100% - 40px); /* Hauteur de l'écran moins la hauteur du texte */
             margin-top: 40px; /* Marge en haut pour laisser de la place au texte */
+            overflow: hidden; /* Masque tout contenu dépassant de la zone délimitée */
         }
         iframe {
             width: 100%;
@@ -33,7 +34,7 @@
 <body>
     <div class="site-name">ToutEn1</div>
     <div class="iframe-container">
-        <iframe src="https://ile-reunion.org/gpt3/"></iframe>
+        <iframe src="https://ile-reunion.org/gpt3/" scrolling="no"></iframe>
     </div>
 </body>
 </html>
