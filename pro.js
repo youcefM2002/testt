@@ -16,7 +16,7 @@ async function sendMessage() {
         addUserMessage(input);
 
         // Appeler l'API de traitement du langage naturel
-        const response = await fetch('https://api.example.com/chatbot', {
+        const response = await fetch('https://www.perplexity.ai/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
