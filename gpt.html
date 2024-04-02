@@ -19,13 +19,14 @@
             height: 100%;
         }
         iframe {
-            width: 60%; /* Réduire la largeur de l'iframe à 60% */
+            width: calc(80% - 20px); /* Définir la largeur de l'iframe à 80% de la largeur de son conteneur parent, moins la marge intérieure */
             height: 100%;
             border: none;
             transform: translateX(-50%); /* Déplacer l'iframe vers la gauche de 50% de sa largeur */
             left: 50%; /* Déplacer l'iframe vers la droite de 50% de la largeur de son conteneur parent */
             position: absolute; /* Position absolue pour centrer l'iframe */
-            clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%); /* Supprimer 20% de la droite de l'iframe */
+            right: 20%; /* Déplacer l'iframe vers la droite de 20% de la largeur de son conteneur parent */
+            margin: 0 10px; /* Ajouter une marge intérieure de 10px à gauche et à droite */
         }
         .site-name {
             font-size: 24px; /* Taille de la police */
@@ -39,6 +40,13 @@
     </style>
 </head>
 <body>
+    <div class="site-name">ToutEn1</div>
+    <div class="iframe-container">
+        <iframe src="https://www.perplexity.ai/search/salut-bkIfDW_DRRypwDvOmN5vSg" scrolling="no"></iframe>
+    </div>
+</body>
+</html>
+
     <div class="site-name">ToutEn1</div>
     <div class="iframe-container">
         <iframe src="https://www.perplexity.ai/search/salut-bkIfDW_DRRypwDvOmN5vSg" scrolling="no"></iframe>
